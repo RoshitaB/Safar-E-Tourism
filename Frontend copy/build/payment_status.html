@@ -1,0 +1,152 @@
+{% extends 'base.html' %} {% block content %} {% if status %} {% load static %}
+<style>
+  body {
+    margin: 0;
+    color: #494140;
+    /* height: 100%;
+          overflow: hidden; */
+  }
+
+  .container1 {
+    width: 400px;
+  }
+  .ticket-content {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  .box1 {
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-bottom: 70%;
+    border-style: solid;
+  }
+</style>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+    crossorigin="anonymous"
+  />
+  <link
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+    rel="stylesheet"
+  />
+  <link href="http://fonts.cdnfonts.com/css/gistesy" rel="stylesheet" />
+</head>
+<body>
+  <div class="container" style="text-align: center; padding-top: 50px">
+    <i
+      class="fa fa-check-circle"
+      aria-hidden="true"
+      style="font-size: 80px; color: green"
+    ></i>
+  </div>
+  <nav class="navbar navbar-expand-sm fixed-top bg-dark navbar-dark">
+    <!-- <a class="navbar-brand" href="#">Home</a> -->
+    <a class="navbar-brand">&nbsp;&nbsp;</a>
+    <a class="navbar-brand" href="#">Safar</a>
+
+    <div
+      class="collapse navbar-collapse justify-content-end"
+      id="navbarCollapse"
+    >
+      <ul class="navbar-nav text-right">
+        <li class="nav-item active">
+          <a class="nav-link active" href="http://127.0.0.1:8000/"
+            >Back to Home</a
+          >
+        </li>
+        <li class="nav-item active"></li>
+      </ul>
+    </div>
+  </nav>
+  <h2 style="text-align: center; color: green">
+    Thank you. Your Payment was Successful.
+  </h2>
+  <br />
+  <br />
+  <div class="box1">
+    <div class="container1">
+      <section>
+        <img src=" {% static 'Images/razpay.jpg' %}" width="375px" alt="" />
+        <h2 style="text-align: center">Entry Ticket</h2>
+        <div class="ticket-content">
+          <table>
+            <tr>
+              <td><strong>Transaction ID:</strong></td>
+              <td>{{id}}</td>
+            </tr>
+            <tr>
+              <td><strong>Name:</strong></td>
+              <td>{{name}}</td>
+            </tr>
+            <tr>
+              <td><strong>Date:</strong></td>
+              <td>{{date}}</td>
+            </tr>
+            <tr>
+              <td><strong>Monument:</strong></td>
+              <td>{{monument}}</td>
+            </tr>
+            <tr>
+              <td><strong>City:</strong></td>
+              <td>{{city}}</td>
+            </tr>
+
+            {% if count_adult != 0 %}
+            <tr>
+              <td><strong>No. of Adults(Indian):</strong></td>
+              <td>{{count_adult}}</td>
+            </tr>
+            {% endif %} {% if count_children != 0 %}
+            <tr>
+              <td><strong>No. of Children:</strong></td>
+              <td>{{count_children}}</td>
+            </tr>
+            {% endif %} {% if count_abroad != 0 %}
+            <tr>
+              <td><strong>No. of Adults(Foreign Nationals):</strong></td>
+              <td>{{count_abroad}}</td>
+            </tr>
+            {% endif %}
+
+            <tr>
+              <td><strong>Total No. of Visitors:</strong></td>
+              <td>{{total_count}}</td>
+            </tr>
+
+            <tr>
+              <td><strong>Price:</strong></td>
+              <td>{{total_cost}}</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+      <aside>
+        <!-- <figure>
+                
+              </figure> -->
+        <figure>
+          <p style="text-align: center">
+            <img
+              src="{% static 'Generated_QR/test.png' %}"
+              width="150px"
+              height="150px"
+              alt=""
+            />
+          </p>
+        </figure>
+      </aside>
+    </div>
+  </div>
+
+  {% else %}
+  <h2 style="text-align: center; color: crimson">
+    Your Payment is failed! Try again.
+  </h2>
+  {% endif %} {% endblock %}
+</body>

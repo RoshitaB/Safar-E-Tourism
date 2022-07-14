@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+      <title>Admin</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm fixed-top bg-dark navbar-dark">
+        <!-- <a class="navbar-brand" href="#">Home</a> -->
+        <a class="navbar-brand" >&nbsp;&nbsp;</a>
+        <a class="navbar-brand" href="/react">Safar</a>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+            <ul class="navbar-nav text-right">
+                <li class="nav-item active">
+                    <a class="nav-link active" href="/adminpage/">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link " href="/logout/">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- The sidebar -->
+
+    <div class="sidebar">
+        <a class="active" href="#"></a>
+        <a  href="/adminpage/">Home</a>
+        <a  href="/Ticket">Ticket</a>
+        <a class="active" href="#">Count</a>
+    </div>
+
+    <div class="head">
+      <h1 style="text-align: center;">
+        <div>
+            <div class="pulsating-circle" style="text-align:right; float:right;"></div>
+            <div><h1>Live Count</h1></div>
+        </div>
+    </div>
+
+    
+    
+  <!-- Page content -->
+  <!-- background-image: linear-gradient(135deg, white,#cce6ff, white ); -->
+    <div class="bg">
+      <div class="grid-container" style="padding-top: 40px;">
+        {% for key,value in counter.items %}
+          <div class="grid-item" style="border: black;">  
+            <button class="button1" style="width: 250px; height: 200px; 
+            background-color: #cce6ff;  background-image: radial-gradient(circle, white,#cce6ff);;
+            border-radius: 5%;" onclick="window.location.href='/display/{{key}}/'">
+            <!-- <div class="block"> -->
+            <!-- Add user icon to the counter -->  
+            <p><i class="fa fa-user fa-1x"></i></p>  
+            <h4 style="text-align:center">{{key}}  </h4>   
+            <h4> {{value}} </h4>
+            </button>
+          <!-- <a href="/display/{{key}}/" class="btn btn-primary" role="button"
+          >View Details</a
+        >    -->
+          </div>
+        <!-- </div>  -->
+        {% endfor %}
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+  </div>
+  </body>
+</html>

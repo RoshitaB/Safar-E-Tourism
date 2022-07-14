@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        body{
+            /* border: 2px solid black; */
+            margin: 3%;
+        }
+        .container{
+            background-color: white;
+        }
+        .img-row {
+            display: block;
+        }
+        .ticket-content table{
+            font-size: 14px;
+            border: 1px solid white; 
+            padding-left: 30px;
+        }
+        .ticket-row {
+            line-height: 2.0;
+        }
+        .ticket-column img1{
+            text-align: center;
+        }
+        .ticket-content ol{
+            padding-left: 10%;
+            line-height: 2.0;
+        }
+        .ticket-content ol li{
+            padding-left: 3%;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="img-row">
+              <!-- <img src="{{safar_logo_1}}" alt="Ministry of Culture Logo" style="width:38%;"> -->
+              <img src="{{safar_logo_1}}" alt="Ministry of Culture Logo" style="height: 300px; text-align: center">
+              <!-- <img src="{{safar_logo_3}}" alt="Ministry of Culture Logo" style="width:38%;"> -->
+        </div>
+        <div class="ticket-content">
+            <h2 style="text-align: center; font-size: 20px; line-height: normal;">E-Ticket for {{monument}}, {{city}}</h2>
+            <div class="ticket-row">
+                <div class="ticket-column">
+                    <img src="{{img}}" width="400px" height="400px" alt="" />
+                </div>
+                <div class="ticket-column">
+                    <table>
+                        <tr>
+                            <td><strong>Transaction ID:</strong></td>
+                            <td>{{id}}</td>
+                        </tr>
+                        <tr>
+                          <td><strong>Name:</strong></td>
+                          <td>{{name}}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Identity Type:</strong></td>
+                            <td>{{doc_type}}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Identity No:</strong></td>
+                            <td>{{personal_id_no}}</td>
+                        </tr>
+                        <tr>
+                          <td><strong>Date of Visit:</strong></td>
+                          <td>{{date}}</td>
+                        </tr>
+              
+                        {% if count_adult != 0 %}
+                        <tr>
+                          <td><strong>No. of Adults(Indian):</strong></td>
+                          <td>{{count_adult}}</td>
+                        </tr>
+                        {% endif %} 
+                        
+                        {% if count_children != 0 %}
+                        <tr>
+                          <td><strong>No. of Children:</strong></td>
+                          <td>{{count_children}}</td>
+                        </tr>
+                        {% endif %} 
+                        {% if count_abroad != 0 %}
+                        <tr>
+                          <td><strong>No. of Adults(Foreign Nationals):</strong></td>
+                          <td>{{count_abroad}}</td>
+                        </tr>
+                        {% endif %}
+              
+                        <tr>
+                          <td><strong>Total No. of Visitors:</strong></td>
+                          <td>{{total_count}}</td>
+                        </tr>
+              
+                        <tr>
+                          <td><strong>Price:</strong></td>
+                          <td>{{total_cost}}</td>
+                        </tr>
+                      </table>
+                </div>
+            </div>
+            <h2 style="text-align: center ;font-size: 20px;">Important Information</h2>
+            <ol style="padding-right: 10%;">
+                <li>The e-ticket is not transferable.</li>
+                <li>Entry Fee is not refundable.</li>
+                <li>Visitor shall be required to show photo identity proof in
+                    original at the entry to the monument.</li>
+                <li> Ticket is valid only for 30 seconds from the time of entry. </li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

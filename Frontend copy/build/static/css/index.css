@@ -1,0 +1,211 @@
+.sidebar {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #047baa;
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {
+    float: left;
+  }
+  div.content {
+    margin-left: 0;
+  }
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+.cardpos {
+  margin-left: 38%;
+  margin-top: 5%
+}
+.head {
+  margin-top: 10%;
+  margin-left: 15%;
+}
+.block {
+  margin-left: 10%;
+  margin-top: 30%;
+  padding: 20px;
+  max-width: 500px;
+  border-radius: 10%;
+  text-align: center;
+  background-color: green;
+  color: white;
+}
+
+.tab {
+  margin-left: 20%;
+  margin-top: 5%;
+}
+.inputf {
+  margin-left: 20%;
+  size: 20%;
+}
+.bg {
+  margin-left: 20%;
+}
+.grid-container {
+  display: grid;
+
+  grid-template-columns: auto auto auto;
+  background-color: #ffffff;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.button1 {
+  cursor: pointer;
+
+  background-color: transparent;
+
+  border: 0ch;
+}
+.pulsating-circle {
+  position: absolute;
+  left: 50%;
+  top: 24%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 15px;
+  height: 15px;
+}
+.pulsating-circle:before {
+  content: "";
+  position: relative;
+  display: block;
+  width: 300%;
+  height: 300%;
+  box-sizing: border-box;
+  margin-left: -100%;
+  margin-top: -100%;
+  border-radius: 45px;
+  background-color: #01a4e9;
+  animation: pulse-ring 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+.pulsating-circle:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  animation: pulse-dot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
+}
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.33);
+  }
+  80%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-dot {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+.update {
+  margin-top: 3%;
+  margin-left: 55%;
+  font-size: 30px;
+}
+/* .pulse{
+    top: 50%;
+  } */
+.image {
+  border-radius: 50%;
+  width: 300px;
+  margin-top: 5%;
+  margin-left: 47%;
+}
+.count {
+  margin-top: 3%;
+  margin-left: 58%;
+  font-size: 40px;
+  font-weight: bold;
+}
+.Graph {
+  border-radius: 50%;
+  margin-left: 20%;
+}
+.monument {
+  margin-bottom: 10%;
+}
+
+.DropDown{
+  margin-left: 100px;
+}
+.img{
+  max-width: 700px;
+  max-height: 400px;
+}
+
+.ScanPage{
+  background-image: url('Images/Bg_admin.webp');
+}

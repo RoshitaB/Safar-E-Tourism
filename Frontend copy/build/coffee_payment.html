@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/payment.css' %}">
+
+{% block content %}
+<style>
+    body{
+	background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("{% static 'Images/razpay.jpg' %}");
+	height: 100vh;
+	background-size: cover;
+	background-position: center;}
+ 
+input[type="submit" i] {
+  background-color: #ffdc40;
+  border: none;
+  color: rgb(15, 15, 15);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 100%;
+  margin-top: 52%;
+  cursor: pointer; 
+  border-radius: 10px;
+   
+}
+input[type="submit" i]:hover{
+    background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+</style>
+   
+    <div class="container" style="width: 40%;border-radius: 5px; padding: 30px; ">
+    
+        
+
+        <br/>
+
+        {% if payment %}
+            <form action="{% url 'payment-status' %}" method="POST">
+                {% csrf_token %}
+                <script
+                        src="https://checkout.razorpay.com/v1/checkout.js"
+                        data-key="rzp_test_A0pbku9Y5vKP6Z"
+                        data-amount="{{ payment.amount }}"
+                        data-currency="{{ payment.currency }}"
+                        data-order_id="{{ payment.id }}"
+                        data-buttontext="Click here to pay!"
+                        data-name="Safar"
+                        data-description="Book here with Razorpay."
+                        data-image="{% static 'Images/Safar.png' %}"
+                        data-prefill.name="{{ payment.name }}"
+                        data-prefill.email="you@example.com"
+                        data-prefill.contact={{payment.number}}
+                        data-theme.color="#F37254"
+                ></script>
+                <input type="hidden" custom="Hidden Element" name="hidden">
+            </form>
+        {% endif %}
+    </div>
+{% endblock %}
