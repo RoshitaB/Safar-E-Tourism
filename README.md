@@ -18,5 +18,17 @@ Objective:
 - ’Safar’ features an Admin Module that provides the Live Count and booking details of the Tourists
 - Finally, the QR Scanning feature is implemented to allow prompt verification of tourists as they enter the monument or museum!
 
+#### Home Page
+![Alt text](/media/home.png "Home Page")
+
+#### Choose a monument/museum
+![Alt text](/media/monuments.png "")
+
+#### Booking Page
+![Alt text](/media/book.png "Book")
+
+#### QR Verification
+![Alt text](/media/verify.png "Verify")
+
 ## Other Contributors
 Vithika Pungliya, Atharva Purohit, Ankur Raut
