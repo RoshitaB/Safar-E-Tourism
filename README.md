@@ -19,4 +19,4 @@ Objective:
 - Finally, the QR Scanning feature is implemented to allow prompt verification of tourists as they enter the monument or museum!
 
 ## Other Contributors
-Vithika Pungliya, Ankur Raut, Atharva Purohit
+Vithika Pungliya, Atharva Purohit, Ankur Raut
