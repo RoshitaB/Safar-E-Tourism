@@ -1,6 +1,6 @@
 # Safar-E-Tourism
 
-Project for Smart India Hackathon 2022
+[Proposed System expected to be published in Proceedings of ICICV 2023. Do not Plagiarise!]
 
 ## About 
 - Developed using **Django** as a backend and **HTML, CSS, JS and React** as the frontend, ‘Safar’ provides a seamless and easy-to-use interface for users to book their tickets.
